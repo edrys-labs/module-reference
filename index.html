@@ -170,7 +170,7 @@
         <h3>Received Messages</h3>
         <div
           x-data="{ messages: [], promiscuous: true }"
-          x-init="Edrys.onMessage((m) => { messages.unshift(m) }, promiscuous=promiscuous)"
+          x-init="$nextTick(() => {}); Edrys.onMessage((m) => { messages.unshift(m) }, promiscuous)"
         >
           <em x-show="!messages.length">No messages received yet...</em>
 
